@@ -672,6 +672,78 @@
             transform: translateY(-3px);
         }
 
+        /* ===== Hobbies / Mural de polaroids ===== */
+        .memories { position: relative; }
+
+        .memories-wall {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2.5rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1.5rem 0;
+        }
+        .polaroid {
+            position: relative;
+            width: 270px;
+            background: #f5f1e8;
+            padding: 0.9rem 0.9rem 0;
+            border-radius: 3px;
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+            transition: transform 0.55s var(--ease-spring), box-shadow 0.45s var(--ease-out);
+            cursor: none;
+        }
+        .polaroid::before {
+            content: '';
+            position: absolute;
+            top: -13px; left: 50%;
+            width: 96px; height: 28px;
+            transform: translateX(-50%) rotate(-3deg);
+            background: rgba(220, 215, 200, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        .polaroid img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 1px;
+            filter: saturate(0.92) contrast(1.03) sepia(0.06);
+            transition: filter 0.5s var(--ease-out);
+        }
+        .polaroid figcaption {
+            font-family: 'Segoe Script', 'Bradley Hand', 'Comic Sans MS', cursive;
+            text-align: center;
+            color: #2c2a26;
+            padding: 1rem 0.4rem 1.25rem;
+            font-size: 1.05rem;
+            line-height: 1.35;
+        }
+        .polaroid .cap-tag {
+            display: block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.64rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #8a8478;
+            margin-top: 0.5rem;
+        }
+        .polaroid:nth-child(1) { transform: rotate(-4deg); }
+        .polaroid:nth-child(2) { transform: rotate(3deg); }
+        .polaroid:nth-child(3) { transform: rotate(-2.5deg); }
+        .polaroid:hover {
+            transform: rotate(0deg) translateY(-12px) scale(1.05);
+            box-shadow: 0 28px 56px rgba(0, 0, 0, 0.6);
+            z-index: 3;
+        }
+        .polaroid:hover img { filter: saturate(1.08) contrast(1.05) sepia(0); }
+        @media (max-width: 600px) {
+            .polaroid { width: 78vw; max-width: 300px; }
+        }
+
         /* ===== CTA ===== */
         .cta-strip { padding: 4rem 1.5rem 2rem; }
         .cta-card {
@@ -775,7 +847,7 @@
                         <span class="typed" id="typed" data-words='["Full Stack Developer","Power Platform na ProNext","Estudante DSM @ Fatec","Apaixonado por código limpo"]'></span><span class="caret"></span>
                     </div>
                     <p class="hero-bio">
-                        Desenvolvedor Full Stack na ProNext há 2 anos e 4 meses, atuando em Power Platform, APIs C#, banco Azure e soluções com IA. No 6º semestre de DSM na Fatec São José dos Campos.
+                        Desenvolvedor Full Stack na ProNext há 2 anos — entrei como estagiário em 2024 e hoje sou Desenvolvedor. Atuo em Power Platform, APIs C#, banco Azure e soluções com IA. No 6º semestre de DSM na Fatec São José dos Campos.
                     </p>
                     <div class="hero-actions">
                         <a href="projetos.html" class="btn-primary-custom magnetic" data-cursor="hover">
@@ -867,10 +939,12 @@
                         <strong>Fatec Jessen Vidal — São José dos Campos</strong>.
                     </p>
                     <p>
-                        Atuo profissionalmente como <strong>Desenvolvedor Full Stack na ProNext</strong> há 2 anos e 4 meses,
-                        trabalhando com Power Platform, APIs em C#, bancos Azure em produção e soluções com IA — tanto
-                        em protótipos quanto em projetos reais. Converso diretamente com clientes, faço levantamento de
-                        requisitos, validação e entrego apps do início ao fim.
+                        Atuo profissionalmente como <strong>Desenvolvedor Full Stack na ProNext</strong> há 2 anos.
+                        Comecei como <strong>estagiário</strong> em maio de 2024 e fui efetivado como
+                        <strong>Desenvolvedor</strong> em 2025. Trabalho com Power
+                        Platform, APIs em C#, bancos Azure em produção e soluções com IA — tanto em protótipos quanto em
+                        projetos reais. Converso diretamente com clientes, faço levantamento de requisitos, validação e
+                        entrego apps do início ao fim.
                     </p>
                     <p>
                         Acredito que tecnologia boa é a que resolve problemas com simplicidade. Por isso busco soluções
@@ -982,9 +1056,9 @@
                             <img src="assets/img/pronext-logo.png" alt="ProNext">
                         </div>
                         <div class="exp-headline">
-                            <div class="exp-period">2 anos e 4 meses · atual</div>
+                            <div class="exp-period">Maio 2024 — atual · ~2 anos</div>
                             <h3>Desenvolvedor Full Stack · <span class="exp-company">ProNext</span></h3>
-                            <p class="exp-summary">Desenvolvimento de software para empresas — Power Platform, APIs C#, banco Azure e soluções com IA.</p>
+                            <p class="exp-summary">Desenvolvimento de software para empresas — Power Platform, APIs C#, banco Azure e soluções com IA. Trajetória de estagiário a Desenvolvedor.</p>
                         </div>
                     </div>
                     <div class="exp-grid">
@@ -1001,6 +1075,13 @@
                             </ul>
                         </div>
                         <div class="exp-side">
+                            <div class="exp-block">
+                                <div class="exp-label">Evolução de cargo</div>
+                                <ul class="exp-list">
+                                    <li><strong>Estágio</strong> — mai 2024 a dez 2024</li>
+                                    <li><strong>Desenvolvedor</strong> — desde jan 2025</li>
+                                </ul>
+                            </div>
                             <div class="exp-block">
                                 <div class="exp-label">Stack</div>
                                 <div class="stack-pills">
@@ -1085,6 +1166,35 @@
                     <span class="skill-pill" data-cursor="hover">Empatia</span>
                     <span class="skill-pill" data-cursor="hover">Atenção a detalhes</span>
                     <span class="skill-pill" data-cursor="hover">Aprendizado contínuo</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOBBIES / MURAL DE MEMÓRIAS -->
+        <section class="section-block memories">
+            <div class="section-wrap">
+                <div class="section-heading" data-reveal>
+                    <span class="eyebrow">Além do profissional</span>
+                    <h2 class="section-title gradient-text">Meus hobbies</h2>
+                    <p class="section-subtitle">
+                        Para além da vida profissional, são os hobbies que ajudam a contar quem eu sou: as trilhas em
+                        áreas rurais, as cachoeiras escondidas na mata e a viola caipira que carrego comigo.
+                    </p>
+                </div>
+
+                <div class="memories-wall" data-reveal>
+                    <figure class="polaroid">
+                        <img src="assets/img/trilha.png" alt="Jonas no topo de uma trilha de montanha">
+                        <figcaption>no topo, o cansaço vira paisagem<span class="cap-tag">trilhas · áreas rurais</span></figcaption>
+                    </figure>
+                    <figure class="polaroid">
+                        <img src="assets/img/cachoeira.png" alt="Jonas em uma cachoeira no meio da mata">
+                        <figcaption>onde o tempo desacelera<span class="cap-tag">cachoeiras · natureza</span></figcaption>
+                    </figure>
+                    <figure class="polaroid">
+                        <img src="assets/img/viola.jpg" alt="Jonas tocando viola caipira">
+                        <figcaption>nas dez cordas, um pedaço de mim<span class="cap-tag">viola caipira · violão</span></figcaption>
+                    </figure>
                 </div>
             </div>
         </section>

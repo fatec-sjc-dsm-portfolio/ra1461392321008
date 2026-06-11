@@ -120,6 +120,18 @@
             .detail-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 500px) { .project { padding: 1rem; } }
+
+        /* Projetos profissionais & pessoais */
+        .projects-divider { margin-top: 5.5rem; }
+        .project-media.is-app { background: linear-gradient(135deg, #15213b, #0a1322); }
+        .project-media.is-app img { object-fit: contain; filter: none; }
+        .project:hover .project-media.is-app img { transform: scale(1.04); filter: none; }
+        .project-media.is-placeholder { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(0, 212, 255, 0.10), rgba(139, 92, 246, 0.10)); }
+        .placeholder-badge { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; text-align: center; padding: 1.5rem; }
+        .placeholder-badge .pb-icon { width: 64px; height: 64px; border-radius: 18px; background: var(--gradient-cool); display: inline-flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 10px 26px rgba(0, 212, 255, 0.3); }
+        .placeholder-badge .pb-text { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); }
+        .project-role.is-pro { background: linear-gradient(135deg, #22c55e, #059669); box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3); }
+        .project-role.is-personal { background: linear-gradient(135deg, #f59e0b, #ef4444); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3); }
     </style>
 </head>
 <body>
@@ -376,6 +388,90 @@
                 </article>
 
                 <div class="empty-state">Nenhum projeto encontrado para este filtro.</div>
+            </div>
+
+            <!-- ===== PROJETOS PROFISSIONAIS & PESSOAIS ===== -->
+            <header class="projects-header projects-divider" data-reveal>
+                <span class="eyebrow">Profissional &amp; Pessoal</span>
+                <h2 class="title gradient-text">Projetos profissionais e pessoais</h2>
+                <p class="lead">Além dos projetos acadêmicos de API, atuo em demandas reais: um projeto profissional desenvolvido na ProNext e um freela pessoal em andamento — cada um com minhas contribuições pessoais.</p>
+            </header>
+
+            <div class="projects-list">
+
+                <!-- Profissional · ProNext -->
+                <article class="project" data-reveal data-reveal-delay="1">
+                    <div class="project-media is-placeholder">
+                        <span class="project-year">ProNext · Profissional</span>
+                        <span class="project-role is-pro">Profissional</span>
+                        <div class="placeholder-badge">
+                            <span class="pb-icon">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                            </span>
+                            <span class="pb-text">Power Platform · Cliente confidencial</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">Profissional · ProNext</div>
+                        <h2 class="project-title">App de Automatização de Processos Jurídicos</h2>
+                        <p class="project-summary">Aplicativo desenvolvido do zero na ProNext para a sede de Campinas de uma multinacional do agronegócio. Automatiza fluxos de aprovação, documentação e comunicação entre áreas, eliminando etapas manuais e reduzindo o tempo de ciclo. O impacto foi reconhecido pelo hall global da empresa.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power Apps</span><span class="tech-tag">Power Automate</span><span class="tech-tag">SharePoint</span><span class="tech-tag">C#</span>
+                        </div>
+                        <div class="project-highlights">
+                            <span class="highlight-pill"><span class="pill-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Reconhecido pelo hall global da multinacional, com matéria interna</span>
+                        </div>
+                        <button class="project-toggle" data-cursor="hover" type="button">
+                            <span class="toggle-text">Ver detalhes completos</span>
+                            <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="project-details">
+                            <div class="project-details-inner">
+                                <div class="detail-grid">
+                                    <div class="detail-block"><div class="detail-label">Descrição completa</div><div class="detail-content">Aplicativo de automatização de processos jurídicos construído na ProNext para a sede de Campinas de uma multinacional indiana do agronegócio, com atuação global. A solução automatiza fluxos de aprovação, geração e organização de documentação e a comunicação entre múltiplas áreas, substituindo etapas manuais. O resultado — economia de tempo, redução de custos e auditoria facilitada — foi tão expressivo que a aplicação foi reconhecida pelo hall global da empresa.</div></div>
+                                    <div class="detail-block"><div class="detail-label">Contribuições pessoais</div><div class="detail-content">Desenvolvi a solução do início ao fim: levantamento de requisitos diretamente com o cliente, modelagem dos fluxos de aprovação no Power Automate, construção das telas e regras no Power Apps e integração com o SharePoint para documentação. Também acompanhei a validação e os ajustes pós-entrega.</div></div>
+                                    <div class="detail-block"><div class="detail-label">Hard skills</div><div class="detail-content">Power Apps, Power Automate, SharePoint, C#, modelagem de processos, integração de sistemas</div></div>
+                                    <div class="detail-block"><div class="detail-label">Soft skills</div><div class="detail-content">Comunicação com cliente corporativo, levantamento de requisitos, autonomia e foco em resultado. Entregar uma solução de impacto global exigiu clareza, organização e responsabilidade do começo ao fim.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Pessoal · Freela DCTA -->
+                <article class="project" data-reveal data-reveal-delay="2">
+                    <div class="project-media is-app">
+                        <span class="project-year">Freela · 2026</span>
+                        <span class="project-role is-personal">Pessoal</span>
+                        <img src="assets/img/cta-app.png" alt="App mobile de controle de estoque do DCTA">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">Pessoal · Freela</div>
+                        <h2 class="project-title">App de Controle de Estoque — DCTA</h2>
+                        <p class="project-summary">Aplicativo mobile em Flutter, desenvolvido como freela para o DCTA (Departamento de Ciência e Tecnologia Aeroespacial). Faz o controle completo de estoque — entrada, saída e permanência de itens, checagem dos itens presentes, leitura de QR Code e geração de relatórios. Backend em Java. Projeto em andamento.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span><span class="tech-tag">Dart</span><span class="tech-tag">Java</span><span class="tech-tag">REST</span><span class="tech-tag">QR Code</span>
+                        </div>
+                        <div class="project-highlights">
+                            <span class="highlight-pill"><span class="pill-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Leitura de QR Code para registrar entrada e saída de itens</span>
+                        </div>
+                        <button class="project-toggle" data-cursor="hover" type="button">
+                            <span class="toggle-text">Ver detalhes completos</span>
+                            <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="project-details">
+                            <div class="project-details-inner">
+                                <div class="detail-grid">
+                                    <div class="detail-block"><div class="detail-label">Descrição completa</div><div class="detail-content">Aplicativo mobile de controle de estoque desenvolvido em Flutter para o DCTA. O app centraliza a gestão de itens com registro de entrada, saída e permanência, checagem dos itens presentes, leitura de QR Code para agilizar as movimentações e geração de relatórios de estoque e movimentações. O backend é construído em Java, garantindo uma camada de dados robusta e organizada. Projeto pessoal (freela) em andamento.</div></div>
+                                    <div class="detail-block"><div class="detail-label">Contribuições pessoais</div><div class="detail-content">Atuo como desenvolvedor full stack do projeto, de ponta a ponta: construí a interface mobile em Flutter, implementei o fluxo de movimentações (entrada, saída e permanência), a leitura de QR Code e a geração de relatórios, além do backend em Java responsável pelas regras de negócio e persistência. Também conduzo o levantamento de requisitos diretamente com o cliente.</div></div>
+                                    <div class="detail-block"><div class="detail-label">Hard skills</div><div class="detail-content">Flutter, Dart, Java, APIs REST, leitura de QR Code, modelagem de dados, geração de relatórios</div></div>
+                                    <div class="detail-block"><div class="detail-label">Soft skills</div><div class="detail-content">Autonomia, organização e relacionamento com o cliente. Tocar um freela do início ao fim exige disciplina, gestão do próprio tempo e comunicação clara para alinhar expectativas e entregar valor.</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </div>
     </main>
